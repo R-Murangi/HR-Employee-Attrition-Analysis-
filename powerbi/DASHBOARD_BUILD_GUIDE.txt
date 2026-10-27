@@ -1,0 +1,56 @@
+POWER BI DASHBOARD — EXACT VISUAL SETUP
+
+After loading data/HR_PowerBI_Ready.csv, rename the table HR.
+Create the measures in measures.dax ONE AT A TIME (Modeling > New measure).
+Select Attrition Rate measure > Measure tools > Format > Percentage > 1 decimal.
+
+PAGE TITLE: HR Employee Attrition Dashboard
+
+TOP ROW: Four Card visuals
+Card 1: [Total Employees] (1470)
+Card 2: [Employees Who Left] (237)
+Card 3: [Attrition Rate] (16.1%)
+Card 4: [Average Monthly Income] (~6503)
+
+CHART 1: Clustered bar chart
+Y-axis: HR[Department]
+X-axis: [Employees Who Left]
+Title: Employees Who Left by Department
+Expected: Research & Development 133, Sales 92, Human Resources 12.
+
+CHART 2: Clustered bar chart
+Y-axis: HR[JobRole]
+X-axis: [Employees Who Left]
+Title: Employees Who Left by Job Role
+
+CHART 3: Donut chart
+Legend: HR[OverTime]
+Values: [Employees Who Left]
+Title: Attrition by Overtime
+Expected: Yes 127, No 110, total 237 (when no chart is selected).
+
+CHART 4: Clustered column chart
+X-axis: HR[AgeGroup]
+Y-axis: [Attrition Rate]
+Title: Attrition Rate by Age Group
+The AgeGroup column is already in the CSV. No new column formula needed.
+
+CHART 5: Clustered bar chart
+Y-axis: HR[JobSatisfaction]
+X-axis: [Attrition Rate]
+Title: Attrition Rate by Job Satisfaction
+
+CHART 6: Clustered bar chart
+Y-axis: HR[IncomeGroup]
+X-axis: [Attrition Rate]
+Title: Attrition Rate by Income Group
+
+SLICERS: Add separate slicer visuals using HR[Department], HR[Gender], HR[OverTime].
+
+NOTE: Clicking a bar in one chart filters other visuals. Click blank canvas
+or deselect the bar to see full-dataset counts again.
+
+FINISH: File > Save As > HR_Analytics_Dashboard.pbix in this powerbi folder.
+
+The actual report visuals must be placed in Power BI Desktop; this ZIP
+provides ready-to-load data, calculations, styling and exact chart settings.

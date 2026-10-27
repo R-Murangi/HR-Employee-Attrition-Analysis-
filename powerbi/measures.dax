@@ -1,0 +1,15 @@
+-- Power BI Desktop: load results/hr_powerbi_ready.csv and rename the table HR.
+-- Create each measure separately using Modeling > New measure.
+
+Total Employees = DISTINCTCOUNT(HR[EmployeeNumber])
+
+Employees Who Left = CALCULATE([Total Employees], HR[Attrition] = "Yes")
+
+Employees Remaining = [Total Employees] - [Employees Who Left]
+
+Attrition Rate = DIVIDE([Employees Who Left], [Total Employees], 0)
+
+Average Monthly Income = AVERAGE(HR[MonthlyIncome])
+
+-- Format Attrition Rate as Percentage, 1 decimal place.
+-- AgeGroup, IncomeGroup and AttritionFlag are already created in the prepared CSV.

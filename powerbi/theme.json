@@ -1,0 +1,7 @@
+{
+  "name": "HR Analytics Clean Blue",
+  "dataColors": ["#2874D0", "#19A68C", "#8058D8", "#F97373", "#F6B64A", "#5E8BB9"],
+  "background": "#FFFFFF",
+  "foreground": "#17243D",
+  "tableAccent": "#2874D0"
+}
